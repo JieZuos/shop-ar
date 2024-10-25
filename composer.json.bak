@@ -59,10 +59,7 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan vendor:publish --tag=public --ansi --force",
-            "@php artisan migrate",
-            "@php artisan vendor:publish --tag=public --force",
-            "\\Aimeos\\Shop\\Composer::join"
+            "@php artisan vendor:publish --tag=public --ansi --force"
         ]
     },
     "extra": {

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Schema;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+	Schema::defaultStringLength(191);
+
         Password::defaults(function () {
             $rule = Password::min( 8 );
             return $this->app->isProduction() ? $rule->mixedCase()->uncompromised() : $rule;
